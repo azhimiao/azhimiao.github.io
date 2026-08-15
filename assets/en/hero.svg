@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbfe"/><stop offset="1" stop-color="#eaf3fb"/></linearGradient>
+    <radialGradient id="moon" cx="50%" cy="40%" r="60%"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#dff4ff"/><stop offset="1" stop-color="#7ac7ed" stop-opacity=".18"/></radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0b2540"/><stop offset="1" stop-color="#061726"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="30" stdDeviation="35" flood-color="#0c2030" flood-opacity=".22"/></filter>
+  </defs>
+  <rect width="1600" height="1000" rx="60" fill="url(#bg)"/>
+  <circle cx="1220" cy="250" r="250" fill="url(#moon)"/><circle cx="1265" cy="205" r="95" fill="#f8fbfe"/>
+  <path d="M145 170a70 70 0 1 1 58 110 54 54 0 1 0-58-110Z" fill="#09233b"/><circle cx="245" cy="145" r="7" fill="#2bbce7"/>
+  <text x="280" y="205" font-size="66" font-family="Georgia,serif" fill="#09233b">NYRA</text>
+  <text x="280" y="250" font-size="24" letter-spacing="5" font-family="Arial,sans-serif" fill="#6c8191">PRIVATE COMPANION</text>
+  <g filter="url(#shadow)" transform="translate(855 105)">
+    <rect width="470" height="790" rx="64" fill="#08111c"/><rect x="18" y="18" width="434" height="754" rx="50" fill="url(#screen)"/><rect x="154" y="36" width="160" height="36" rx="18" fill="#020810"/>
+    <circle cx="80" cy="250" r="120" fill="#173b5b" opacity=".75"/><circle cx="83" cy="250" r="88" fill="#071521"/><path d="M48 224a58 58 0 1 1 48 92 45 45 0 1 0-48-92Z" fill="#e9f8ff"/>
+    <circle cx="105" cy="208" r="4" fill="#fff"/><circle cx="139" cy="236" r="3" fill="#fff"/><circle cx="65" cy="300" r="3" fill="#fff"/>
+    <path d="M38 548 C150 465, 260 505, 418 420 L418 735 L38 735Z" fill="#102a41"/>
+    <rect x="72" y="590" width="295" height="88" rx="22" fill="#143a5d" stroke="#4ba9d5" stroke-opacity=".35"/>
+    <text x="100" y="625" font-size="21" font-family="Arial,sans-serif" fill="#dff7ff">Good evening.</text><text x="100" y="655" font-size="20" font-family="Arial,sans-serif" fill="#a7c4d6">I’m still here.</text>
+    <g transform="translate(50 706)" fill="#83d9ff"><circle cx="0" cy="0" r="9"/><circle cx="85" cy="0" r="6" opacity=".65"/><circle cx="170" cy="0" r="6" opacity=".65"/><circle cx="255" cy="0" r="6" opacity=".65"/><circle cx="340" cy="0" r="6" opacity=".65"/></g>
+  </g>
+  <path d="M760 690 C620 630, 650 510, 770 485 C880 460, 830 345, 735 345" fill="none" stroke="#30bde8" stroke-width="4" stroke-dasharray="10 16" opacity=".45"/>
+  <g transform="translate(740 345)"><circle r="74" fill="#ffffff" stroke="#8adcf8" stroke-width="3"/><path d="M-22-28a38 38 0 1 1 31 60 30 30 0 1 0-31-60Z" fill="#0b2a46"/><path d="M43-34 q30 18 6 48" fill="none" stroke="#20b9e8" stroke-width="6" stroke-linecap="round"/><circle cx="-8" cy="18" r="3" fill="#21b9e8"/></g>
+  <g transform="translate(675 505) scale(.8)" opacity=".9"><circle r="70" fill="#fff" stroke="#c1eaf8" stroke-width="3"/><path d="M-20-27a37 37 0 1 1 30 59 29 29 0 1 0-30-59Z" fill="#153b59"/><path d="M50 -16 q30 18 0 36 M60 -28 q42 28 0 56" fill="none" stroke="#25b8e6" stroke-width="5" stroke-linecap="round"/></g>
+  <g transform="translate(745 690) scale(.7)" opacity=".8"><ellipse cx="0" cy="52" rx="78" ry="18" fill="#cfeaf6"/><circle r="66" fill="#fff" stroke="#d7edf6" stroke-width="3"/><path d="M-20-26a35 35 0 1 1 29 56 28 28 0 1 0-29-56Z" fill="#1a3d58"/><text x="48" y="-45" font-size="30" font-family="sans-serif" fill="#7bbbd6">Z z</text></g>
+  <g font-family="Arial,sans-serif" fill="#23455e"><text x="130" y="760" font-size="34" font-weight="700">Not a feature list.</text><text x="130" y="810" font-size="27">A presence that stays with your device.</text></g>
+  <rect x="130" y="855" width="380" height="2" fill="#43bfe8"/><text x="130" y="900" font-size="22" font-family="Arial,sans-serif" fill="#778f9f">LOGO · ATMOSPHERE · PET MOTION · PRIVATE SPACE</text>
+</svg>

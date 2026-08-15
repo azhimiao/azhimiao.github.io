@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>404 — Nyra</title>
+</head>
+<body>
+  <main style="min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px">
+    <div>
+      <span class="brand-mark" style="width:56px;height:56px;display:inline-block" aria-hidden="true"></span>
+      <p style="margin:26px 0 10px;color:#7691a2;font-size:12px;letter-spacing:.13em">404 / NOT HERE</p>
+      <h1 id="notfoundTitle" style="font-family:Georgia,'Noto Serif SC','Songti SC',serif;font-size:clamp(56px,12vw,120px);font-weight:500;letter-spacing:-.04em;margin:0">Nothing here.</h1>
+      <p id="notfoundSub" style="color:#647e90;margin:22px 0 36px">The page you are looking for does not exist.</p>
+      <a class="btn primary" id="notfoundHome" href="/">Back to Nyra / Home →</a>
+    </div>
+  </main>
+  <button class="lang" id="nfToggle" type="button" style="position:fixed;top:20px;right:20px">中 / EN</button>
+  <script>
+    const LOC={en:{title:'Nothing here.',sub:'The page you are looking for does not exist.',home:'Back to Nyra / Home →',label:'中 / EN'},zh:{title:'这里没有她。',sub:'你要找的页面不存在。',home:'回到月栖 / Home →',label:'EN / 中'}};
+    let nfLocale=localStorage.getItem('nyra-locale')||'en';
+    function nfApply(l){nfLocale=l;localStorage.setItem('nyra-locale',l);document.documentElement.lang=l==='zh'?'zh-CN':'en';document.title=l==='zh'?'404 — 月栖':'404 — Nyra';document.getElementById('notfoundTitle').textContent=LOC[l].title;document.getElementById('notfoundSub').textContent=LOC[l].sub;document.getElementById('notfoundHome').textContent=LOC[l].home;document.getElementById('nfToggle').textContent=LOC[l].label;}
+    nfApply(nfLocale);
+    document.getElementById('nfToggle').addEventListener('click',()=>nfApply(nfLocale==='zh'?'en':'zh'));
+  </script>
+</body>
+</html>

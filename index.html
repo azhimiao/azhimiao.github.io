@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7fbfe" />
+  <meta name="description" content="月栖 Nyra — 陪伴，不止在聊天框里。" />
+  <meta property="og:title" content="Nyra / 月栖" />
+  <meta property="og:description" content="一个会留在设备与日常里的私人陪伴终端。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://azhimiao.github.io" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Nyra / 月栖</title>
+</head>
+<body>
+  <div class="lang-gate" id="langGate" hidden>
+    <div class="lang-gate-card">
+      <div class="lang-gate-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy"><b>NYRA</b><small>月栖</small></span>
+      </div>
+      <p class="lang-gate-title">Choose your language</p>
+      <p class="lang-gate-sub">选择你的语言</p>
+      <div class="lang-gate-options">
+        <button type="button" class="lang-option active" data-lang="en">
+          <b>English</b><span>English · EN</span>
+        </button>
+        <button type="button" class="lang-option" data-lang="zh">
+          <b>中文</b><span>简体中文 · ZH</span>
+        </button>
+      </div>
+      <button type="button" class="lang-gate-confirm" id="langGateConfirm">Continue · 继续</button>
+    </div>
+  </div>
+
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="Nyra home" data-i18n-aria="aria.home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy"><b>NYRA</b><small>月栖</small></span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#showcase" data-i18n="nav.showcase">看看月栖</a>
+      <a href="#community" data-i18n="nav.community">群聊</a>
+      <a href="#download" data-i18n="nav.download">下载</a>
+    </nav>
+    <div class="top-actions">
+      <button class="lang" id="localeToggle" type="button" aria-label="Switch language" data-i18n-aria="aria.lang">中 / EN</button>
+      <a class="top-download" href="#download" data-i18n="nav.download">下载</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" data-i18n-aria="aria.menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#showcase" data-i18n="nav.showcase">看看月栖</a>
+    <a href="#community" data-i18n="nav.community">群聊</a>
+    <a href="#download" data-i18n="nav.download">下载</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span><b data-i18n="hero.kicker">ANDROID BETA · PRIVATE COMPANION</b></div>
+        <h1 data-i18n="hero.title">她会留下来。</h1>
+        <p class="hero-lead" data-i18n="hero.lead">月栖不是把功能塞进聊天框，而是让一个角色真正留在你的设备、记忆和日常里。</p>
+        <div class="hero-actions">
+          <a class="btn primary" id="heroDownload" href="#download"><span data-i18n="hero.download">下载 Android</span><b>↓</b></a>
+          <a class="btn ghost" id="heroCommunity" href="#community"><span data-i18n="hero.community">加入官方群聊</span><b>↗</b></a>
+        </div>
+        <div class="trust-row">
+          <span data-i18n="hero.t1">桌面常驻</span><i></i><span data-i18n="hero.t2">持续记忆</span><i></i><span data-i18n="hero.t3">可控感知</span>
+        </div>
+      </div>
+
+      <div class="hero-media reveal" id="heroMedia">
+        <div class="visual-shell hero-shell">
+          <img id="heroVisual" src="/assets/zh/hero.svg" alt="月栖产品视觉" data-i18n-alt="alt.hero" />
+        </div>
+        <div class="media-note note-one" data-i18n="hero.note1">桌宠动作不是功能栏，而是“她在干什么”</div>
+        <div class="media-note note-two" data-i18n="hero.note2">中英文分别使用独立视觉资产</div>
+      </div>
+    </section>
+
+    <section class="quick-links reveal" aria-label="Quick actions">
+      <a href="#download"><small>01</small><b data-i18n="quick.download">直接下载</b><span>↓</span></a>
+      <a href="#community"><small>02</small><b data-i18n="quick.community">加入群聊</b><span>↗</span></a>
+      <a href="#showcase"><small>03</small><b data-i18n="quick.showcase">看她怎么存在</b><span>→</span></a>
+    </section>
+
+    <section class="showcase" id="showcase">
+      <div class="section-head reveal">
+        <p data-i18n="kicker.showcase">NYRA / SHOWCASE</p>
+        <h2 data-i18n="showcase.title">不用把官网做成说明书。<br>先让人想把她带走。</h2>
+        <span data-i18n="showcase.sub">官网展示重点改成 Logo、意境、桌宠动作和私人空间；功能解释只留必要部分。</span>
+      </div>
+
+      <article class="story-card reveal">
+        <div class="story-copy">
+          <span data-i18n="kicker.presence">01 / PRESENCE</span>
+          <h3 data-i18n="presence.title">离开 App，她仍然在。</h3>
+          <p data-i18n="presence.desc">挥手、听你说话、休息、提醒你——桌宠展示的是“在场”和动作，而不是一排功能按钮。</p>
+        </div>
+        <div class="story-visual"><img id="presenceVisual" src="/assets/zh/presence.svg" alt="月栖桌宠动作" data-i18n-alt="alt.presence"></div>
+      </article>
+
+      <article class="story-card dark reveal">
+        <div class="story-copy">
+          <span data-i18n="kicker.space">02 / PRIVATE SPACE</span>
+          <h3 data-i18n="space.title">属于你们自己的地方。</h3>
+          <p data-i18n="space.desc">用房间、日记、共听和记忆的意境来展示月栖，而不是拿设置页当产品卖点。</p>
+        </div>
+        <div class="story-visual"><img id="spaceVisual" src="/assets/zh/space.svg" alt="月栖私人空间" data-i18n-alt="alt.space"></div>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-copy">
+          <span data-i18n="kicker.sense">03 / PERCEPTION</span>
+          <h3 data-i18n="sense.title">现实能力只解释一件事：由你决定。</h3>
+          <p data-i18n="sense.desc">语音、摄像头、屏幕、定位和日历保留，但不再抢占视觉中心。它们是边界说明，不是官网主角。</p>
+        </div>
+        <div class="story-visual"><img id="senseVisual" src="/assets/zh/sense.svg" alt="月栖现实感知" data-i18n-alt="alt.sense"></div>
+      </article>
+    </section>
+
+    <section class="community" id="community">
+      <div class="community-copy reveal">
+        <span>NYRA COMMUNITY</span>
+        <h2 data-i18n="community.title">想先看看？<br>来群里。</h2>
+        <p data-i18n="community.desc">测试包、更新、Bug、设计讨论都会先在这里出现。官网的第二个目标，就是把感兴趣的人留下来。</p>
+        <div class="community-actions">
+          <button class="contact-card" id="qqContact" type="button">
+            <small>QQ GROUP</small>
+            <strong id="qqGroup">1034044082</strong>
+            <span data-i18n="community.copyQq">复制群号</span>
+          </button>
+          <button class="contact-card" id="discordContact" type="button">
+            <small>DISCORD</small>
+            <strong id="discordHandle">@cogprism</strong>
+            <span data-i18n="community.copyDiscord">复制用户名</span>
+          </button>
+          <a class="text-link hidden" id="githubLink" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="community-feed reveal">
+        <div><small>22:41 · NYRA</small><b data-i18n="community.m1">新版本已经发了。</b></div>
+        <div><small>22:46 · TESTER</small><b data-i18n="community.m2">桌宠这次终于不会退出 App 就消失了。</b></div>
+        <div><small>22:49 · YOU</small><b data-i18n="community.m3">下一版想看什么？直接说。</b></div>
+      </div>
+    </section>
+
+    <section class="download" id="download">
+      <div class="download-card reveal">
+        <div class="download-copy">
+          <span data-i18n="kicker.download">ANDROID / BETA</span>
+          <h2 data-i18n="download.title">下载月栖。</h2>
+          <p data-i18n="download.desc">当前先开放 Android 测试版。网页本身只负责让你快速找到下载和群聊。</p>
+          <a class="apk-button" id="apkDownload" href="/downloads/nyra-latest.apk">
+            <div><small>ANDROID APK</small><strong data-i18n="download.button">立即下载</strong></div><b>↓</b>
+          </a>
+          <div class="release-meta">
+            <span><small data-i18n="download.version">版本</small><b id="releaseVersion">Beta</b></span>
+            <span><small data-i18n="download.system">系统</small><b id="releaseSystem">Android 10+</b></span>
+            <span><small data-i18n="download.size">大小</small><b id="releaseSize">—</b></span>
+            <span><small data-i18n="download.sha">SHA-256</small><b id="releaseSha">—</b></span>
+          </div>
+        </div>
+        <div class="download-art" aria-hidden="true">
+          <div class="download-logo"></div><div class="download-ring r1"></div><div class="download-ring r2"></div><div class="download-dot d1"></div><div class="download-dot d2"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark"></span><div><b>NYRA / 月栖</b><small data-i18n="footer.line">让陪伴真正留下来。</small></div></div>
+    <div class="footer-links">
+      <a href="#community" data-i18n="footer.community">官方群聊</a>
+      <a class="hidden" id="contactLink" href="#" data-i18n="footer.contact">联系</a>
+      <a href="/privacy.html" data-i18n="footer.privacy">隐私</a>
+      <a href="/terms.html" data-i18n="footer.terms">条款</a>
+    </div>
+    <div class="footer-copy">© 2026 <span id="copyrightOwner">MemPrism</span></div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+  <script src="/site.config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
