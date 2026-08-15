@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://azhimiao.github.io/</loc></url>
+  <url><loc>https://azhimiao.github.io/legal/</loc></url>
+  <url><loc>https://azhimiao.github.io/legal/?doc=privacy</loc></url>
+  <url><loc>https://azhimiao.github.io/legal/?doc=terms</loc></url>
+  <url><loc>https://azhimiao.github.io/legal/?doc=important</loc></url>
   <url><loc>https://azhimiao.github.io/privacy.html</loc></url>
   <url><loc>https://azhimiao.github.io/terms.html</loc></url>
+  <url><loc>https://azhimiao.github.io/downloads/nyra-latest.apk</loc></url>
 </urlset>

@@ -84,7 +84,11 @@ main{overflow:hidden}
 .download-copy{padding:72px}
 .download-copy h2{font-family:Georgia,"Noto Serif SC",serif;font-size:clamp(42px,5.4vw,68px);font-weight:500;margin:0 0 15px}
 .download-copy p{color:#6a8293;line-height:1.7;margin:0}
-.apk-button{margin-top:28px;background:var(--ink);color:#fff;border-radius:20px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;max-width:390px;transition:transform .2s,box-shadow .2s}
+.apk-button{margin-top:0;background:var(--ink);color:#fff;border-radius:20px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;max-width:420px;transition:transform .2s,box-shadow .2s}
+.download-channels{display:flex;flex-direction:column;gap:12px;margin-top:28px;max-width:420px}
+.apk-button.ghost{background:transparent;color:var(--ink);border:1px solid #bdced9}
+.apk-button.ghost small{color:#7f98a8}
+.apk-button.ghost:hover{box-shadow:0 16px 36px rgba(7,26,43,.08);background:#fff}
 .apk-button small{display:block;color:#85a9bf;font-size:9px;letter-spacing:.12em}
 .apk-button strong{display:block;font-size:18px;margin-top:4px}
 .apk-button>b{font-size:26px;transition:transform .2s}

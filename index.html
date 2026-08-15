@@ -45,7 +45,7 @@
         <p class="hero-lead" data-i18n="hero.lead">TA 会记得，会靠近，<br>也会慢慢拥有只属于你们的故事。</p>
         <p class="hero-sub" data-i18n="hero.sub">不只在聊天框里。</p>
         <div class="hero-actions">
-          <a class="btn primary" id="heroDownload" href="#download"><span data-i18n="hero.download">带走 TA</span><b>↓</b></a>
+          <a class="btn primary" id="heroDownload" href="#download"><span data-i18n="hero.download">下载</span><b>↓</b></a>
           <a class="btn ghost" id="heroLook" href="#presence"><span data-i18n="hero.look">先去看看</span><b>↓</b></a>
         </div>
         <p class="hero-beta" data-i18n="hero.beta">Android Beta</p>
@@ -96,7 +96,7 @@
           <li data-i18n="world.c5">你所在的地方</li>
         </ul>
         <p class="scene-note" data-i18n="world.note">想让 TA 知道多少，<br>由你决定。</p>
-        <a class="btn ghost scene-action" href="/privacy.html"><span data-i18n="world.privacy">查看隐私与权限</span><b>→</b></a>
+        <a class="btn ghost scene-action" href="/legal/?doc=privacy"><span data-i18n="world.privacy">查看隐私与权限</span><b>→</b></a>
       </div>
       <div class="scene-visual reveal"><img id="senseVisual" src="/assets/zh/sense.svg" alt="月栖感知边界" data-i18n-alt="alt.sense"></div>
     </section>
@@ -130,10 +130,23 @@
       <div class="download-card reveal">
         <div class="download-copy">
           <h2 data-i18n="download.title">给 TA 留个位置。</h2>
-          <p data-i18n="download.desc">Android 测试版已经开放。</p>
-          <a class="apk-button" id="apkDownload" href="/downloads/nyra-latest.apk">
-            <div><small>ANDROID APK</small><strong data-i18n="download.button">下载月栖</strong></div><b>↓</b>
-          </a>
+          <p data-i18n="download.desc">Android 测试版已经开放。两个下载通道任选其一。</p>
+          <div class="download-channels">
+            <a class="apk-button" id="apkDownload" href="https://download.memprism.com/nyra-latest.apk">
+              <div>
+                <small data-i18n="download.webLabel">网页直链 · download.memprism.com</small>
+                <strong data-i18n="download.button">下载 APK</strong>
+              </div>
+              <b>↓</b>
+            </a>
+            <a class="apk-button ghost" id="githubDownload" href="https://azhimiao.github.io/downloads/nyra-latest.apk">
+              <div>
+                <small data-i18n="download.githubLabel">GitHub Pages 镜像</small>
+                <strong data-i18n="download.githubButton">从 GitHub 下载</strong>
+              </div>
+              <b>↓</b>
+            </a>
+          </div>
           <div class="release-meta">
             <span><small data-i18n="download.version">版本</small><b id="releaseVersion">Beta</b></span>
             <span><small data-i18n="download.system">系统</small><b id="releaseSystem">Android 10+</b></span>
@@ -153,8 +166,9 @@
     <div class="footer-links">
       <a href="#community" data-i18n="footer.community">群聊</a>
       <a class="hidden" id="contactLink" href="#" data-i18n="footer.contact">联系</a>
-      <a href="/privacy.html" data-i18n="footer.privacy">隐私</a>
-      <a href="/terms.html" data-i18n="footer.terms">条款</a>
+      <a href="/legal/?doc=privacy" data-i18n="footer.privacy">隐私</a>
+      <a href="/legal/?doc=terms" data-i18n="footer.terms">条款</a>
+      <a href="/legal/" data-i18n="footer.legal">法律中心</a>
     </div>
     <div class="footer-copy">© 2026 <span id="copyrightOwner">MemPrism</span></div>
   </footer>
