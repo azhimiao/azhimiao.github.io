@@ -18,10 +18,11 @@
   </main>
   <button class="lang" id="nfToggle" type="button" style="position:fixed;top:20px;right:20px">中 / EN</button>
   <script>
-    const LOC={en:{title:'Nothing here.',sub:'The page you are looking for does not exist.',home:'Back to Nyra / Home →',label:'中 / EN'},zh:{title:'这里没有她。',sub:'你要找的页面不存在。',home:'回到月栖 / Home →',label:'EN / 中'}};
-    let nfLocale=localStorage.getItem('nyra-locale')||'en';
-    function nfApply(l){nfLocale=l;localStorage.setItem('nyra-locale',l);document.documentElement.lang=l==='zh'?'zh-CN':'en';document.title=l==='zh'?'404 — 月栖':'404 — Nyra';document.getElementById('notfoundTitle').textContent=LOC[l].title;document.getElementById('notfoundSub').textContent=LOC[l].sub;document.getElementById('notfoundHome').textContent=LOC[l].home;document.getElementById('nfToggle').textContent=LOC[l].label;}
-    nfApply(nfLocale);
+    const LOC={en:{title:'Nothing here.',sub:'The page you are looking for does not exist.',home:'Back to Nyra / Home →',label:'中 / EN'},zh:{title:'这里什么也没有。',sub:'你要找的页面不存在。',home:'回到月栖 / Home →',label:'EN / 中'}};
+    const nfSaved=localStorage.getItem('nyra-locale');
+    let nfLocale=nfSaved==='zh'||nfSaved==='en'?nfSaved:((navigator.languages||[navigator.language||'en']).some(tag=>String(tag).toLowerCase().startsWith('zh'))?'zh':'en');
+    function nfApply(l,remember=true){nfLocale=l;if(remember)localStorage.setItem('nyra-locale',l);document.documentElement.lang=l==='zh'?'zh-CN':'en';document.title=l==='zh'?'404 — 月栖':'404 — Nyra';document.getElementById('notfoundTitle').textContent=LOC[l].title;document.getElementById('notfoundSub').textContent=LOC[l].sub;document.getElementById('notfoundHome').textContent=LOC[l].home;document.getElementById('nfToggle').textContent=LOC[l].label;}
+    nfApply(nfLocale,nfSaved!==null);
     document.getElementById('nfToggle').addEventListener('click',()=>nfApply(nfLocale==='zh'?'en':'zh'));
   </script>
 </body>

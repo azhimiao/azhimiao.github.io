@@ -12,5 +12,5 @@
 <text x="900" y="475" font-size="22" font-family="PingFang SC,sans-serif" fill="#5e7c8f">休息</text>
 <g transform="translate(1180 465)"><circle r="58" fill="#fff" stroke="#83d8f6" stroke-width="3"/><path d="M-18-23a31 31 0 1 1 25 50 25 25 0 1 0-25-50Z" fill="#0b2a45"/><circle cx="40" cy="-35" r="12" fill="#28bce8"/></g>
 <text x="1148" y="555" font-size="22" font-family="PingFang SC,sans-serif" fill="#5e7c8f">提醒你</text>
-<text x="90" y="780" font-size="52" font-family="Noto Serif SC,serif" fill="#0a2238">离开 App，她仍然在。</text><text x="90" y="830" font-size="24" font-family="PingFang SC,sans-serif" fill="#708a9b">桌宠不是一个按钮，而是一种持续的在场。</text>
+<text x="90" y="800" font-size="46" font-family="Noto Serif SC,serif" fill="#0a2238">TA 在自己的角落里。</text>
 </svg>

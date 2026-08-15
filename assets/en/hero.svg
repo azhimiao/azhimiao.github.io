@@ -23,6 +23,6 @@
   <g transform="translate(740 345)"><circle r="74" fill="#ffffff" stroke="#8adcf8" stroke-width="3"/><path d="M-22-28a38 38 0 1 1 31 60 30 30 0 1 0-31-60Z" fill="#0b2a46"/><path d="M43-34 q30 18 6 48" fill="none" stroke="#20b9e8" stroke-width="6" stroke-linecap="round"/><circle cx="-8" cy="18" r="3" fill="#21b9e8"/></g>
   <g transform="translate(675 505) scale(.8)" opacity=".9"><circle r="70" fill="#fff" stroke="#c1eaf8" stroke-width="3"/><path d="M-20-27a37 37 0 1 1 30 59 29 29 0 1 0-30-59Z" fill="#153b59"/><path d="M50 -16 q30 18 0 36 M60 -28 q42 28 0 56" fill="none" stroke="#25b8e6" stroke-width="5" stroke-linecap="round"/></g>
   <g transform="translate(745 690) scale(.7)" opacity=".8"><ellipse cx="0" cy="52" rx="78" ry="18" fill="#cfeaf6"/><circle r="66" fill="#fff" stroke="#d7edf6" stroke-width="3"/><path d="M-20-26a35 35 0 1 1 29 56 28 28 0 1 0-29-56Z" fill="#1a3d58"/><text x="48" y="-45" font-size="30" font-family="sans-serif" fill="#7bbbd6">Z z</text></g>
-  <g font-family="Arial,sans-serif" fill="#23455e"><text x="130" y="760" font-size="34" font-weight="700">Not a feature list.</text><text x="130" y="810" font-size="27">A presence that stays with your device.</text></g>
-  <rect x="130" y="855" width="380" height="2" fill="#43bfe8"/><text x="130" y="900" font-size="22" font-family="Arial,sans-serif" fill="#778f9f">LOGO · ATMOSPHERE · PET MOTION · PRIVATE SPACE</text>
+  <g font-family="Arial,sans-serif" fill="#23455e"><text x="130" y="760" font-size="34" font-weight="700">Someone who remembers.</text><text x="130" y="810" font-size="27">Someone who stays.</text></g>
+  <rect x="130" y="855" width="380" height="2" fill="#43bfe8"/>
 </svg>

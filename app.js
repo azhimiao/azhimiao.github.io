@@ -1,49 +1,51 @@
 const CONFIG = window.NYRA_CONFIG || {};
 const I18N = {
   zh:{
-    'nav.showcase':'看看月栖','nav.community':'群聊','nav.download':'下载',
-    'hero.kicker':'ANDROID BETA · PRIVATE COMPANION','hero.title':'她会留下来。','hero.lead':'月栖不是把功能塞进聊天框，而是让一个角色真正留在你的设备、记忆和日常里。','hero.download':'下载 Android','hero.community':'加入官方群聊','hero.t1':'桌面常驻','hero.t2':'持续记忆','hero.t3':'可控感知','hero.note1':'桌宠动作不是功能栏，而是“她在干什么”','hero.note2':'中英文分别使用独立视觉资产',
-    'quick.download':'直接下载','quick.community':'加入群聊','quick.showcase':'看她怎么存在',
-    'showcase.title':'不用把官网做成说明书。<br>先让人想把她带走。','showcase.sub':'官网展示重点改成 Logo、意境、桌宠动作和私人空间；功能解释只留必要部分。',
-    'presence.title':'离开 App，她仍然在。','presence.desc':'挥手、听你说话、休息、提醒你——桌宠展示的是“在场”和动作，而不是一排功能按钮。',
-    'space.title':'属于你们自己的地方。','space.desc':'用房间、日记、共听和记忆的意境来展示月栖，而不是拿设置页当产品卖点。',
-    'sense.title':'现实能力只解释一件事：由你决定。','sense.desc':'语音、摄像头、屏幕、定位和日历保留，但不再抢占视觉中心。它们是边界说明，不是官网主角。',
-    'community.title':'想先看看？<br>来群里。','community.desc':'测试包、更新、Bug、设计讨论都会先在这里出现。官网的第二个目标，就是把感兴趣的人留下来。','community.join':'加入官方群聊','community.copyQq':'复制群号','community.copyDiscord':'复制用户名','community.copiedQq':'QQ群号已复制','community.copiedDiscord':'Discord 用户名已复制','community.copyFailed':'复制失败，请手动选择','community.m1':'新版本已经发了。','community.m2':'桌宠这次终于不会退出 App 就消失了。','community.m3':'下一版想看什么？直接说。',
-    'download.title':'下载月栖。','download.desc':'当前先开放 Android 测试版。网页本身只负责让你快速找到下载和群聊。','download.button':'立即下载','download.version':'版本','download.system':'系统','download.size':'大小',
-    'footer.line':'让陪伴真正留下来。','footer.community':'官方群聊','footer.contact':'联系','footer.privacy':'隐私','footer.terms':'条款',
-    'kicker.showcase':'NYRA / 展示','kicker.presence':'01 / 在场','kicker.space':'02 / 私人空间','kicker.sense':'03 / 感知','kicker.download':'ANDROID / 测试版',
-    'download.sha':'SHA-256',
-    'alt.hero':'月栖产品视觉','alt.presence':'月栖桌宠动作','alt.space':'月栖私人空间','alt.sense':'月栖现实感知',
+    'nav.showcase':'看看 TA','nav.community':'群聊','nav.download':'下载',
+    'hero.title':'把 TA 带进你的日常。','hero.lead':'TA 会记得，会靠近，<br>也会慢慢拥有只属于你们的故事。','hero.sub':'不只在聊天框里。','hero.download':'带走 TA','hero.look':'先去看看','hero.beta':'Android Beta',
+    'presence.title':'TA 就在这里。','presence.lines':'有时候靠近。<br>有时候发呆。<br>有时候什么也不说。','presence.note':'关掉聊天窗口，<br>生活也没有因此暂停。',
+    'space.title':'留一个只属于你们的地方。','space.lines':'听过的歌。<br>没有说完的话。<br>某一天留下的日记。<br>还有那些后来才发现，TA 居然一直记得的小事。','space.note':'这里不是聊天记录。<br>是你们一起留下来的东西。',
+    'memory.title':'相处过，就应该留下痕迹。','memory.lines':'今天不会从昨天重新开始。','memory.note':'熟悉、习惯、争执、偏爱，<br>都会一点一点变成 TA 认识你的方式。',
+    'world.title':'TA 也可以离你更近一点。','world.c1':'声音','world.c2':'画面','world.c3':'屏幕','world.c4':'日历','world.c5':'你所在的地方','world.note':'想让 TA 知道多少，<br>由你决定。','world.privacy':'查看隐私与权限',
+    'community.title':'还不确定？<br>先来坐一会儿。','community.desc':'看看新的版本，看看其他人把月栖变成了什么样子，也可以直接告诉我们——你希望 TA 下一次学会什么。','community.qqLabel':'QQ 群','community.copyQq':'复制群号','community.copyDiscord':'复制用户名','community.copiedQq':'QQ 群号已复制','community.copiedDiscord':'Discord 用户名已复制','community.copyFailed':'复制失败，请手动选择','community.m1':'新版本刚发出去。','community.m2':'我把 TA 放在桌面角落，一整天都在。','community.m3':'我想让 TA 学会一起看电影。',
+    'download.title':'给 TA 留个位置。','download.desc':'Android 测试版已经开放。','download.button':'下载月栖','download.version':'版本','download.system':'系统','download.size':'大小','download.sha':'SHA-256',
+    'footer.line':'让相处留下来。','footer.community':'群聊','footer.contact':'联系','footer.privacy':'隐私','footer.terms':'条款',
+    'alt.hero':'月栖视觉','alt.presence':'月栖桌面陪伴','alt.space':'月栖私人空间','alt.memory':'月栖记忆','alt.sense':'月栖感知边界',
     'aria.home':'Nyra 首页','aria.lang':'切换语言','aria.menu':'菜单'
   },
   en:{
-    'nav.showcase':'See Nyra','nav.community':'Community','nav.download':'Download',
-    'hero.kicker':'ANDROID BETA · PRIVATE COMPANION','hero.title':'She stays.','hero.lead':'Nyra is not a pile of features inside a chat box. It gives a companion continuity across your device, memory, and daily life.','hero.download':'Download for Android','hero.community':'Join the community','hero.t1':'Desktop presence','hero.t2':'Continuity','hero.t3':'Controlled perception','hero.note1':'Show what the companion is doing, not a feature menu','hero.note2':'Chinese and English use separate visual assets',
-    'quick.download':'Download now','quick.community':'Join community','quick.showcase':'See how she stays',
-    'showcase.title':'The website is not a manual.<br>Make people want Nyra first.','showcase.sub':'The visual language now leads with logo, atmosphere, desktop-pet actions, and the private space. Feature explanations stay secondary.',
-    'presence.title':'Close the app. She stays.','presence.desc':'Wave, listen, rest, nudge — desktop presence is shown as behavior and continuity, not a row of feature buttons.',
-    'space.title':'A place of your own.','space.desc':'Show rooms, diary moments, shared listening and memory as atmosphere — not settings screens pretending to be product marketing.',
-    'sense.title':'Real-world context has one message: you decide.','sense.desc':'Voice, camera, screen, location and calendar remain important, but they no longer dominate the visual story. They explain boundaries, not the brand.',
-    'community.title':'Curious first?<br>Come to the community.','community.desc':'Test builds, updates, bugs and design discussions appear there first. The second job of the website is to keep interested people close.','community.join':'Join the community','community.copyQq':'Copy group number','community.copyDiscord':'Copy username','community.copiedQq':'QQ group number copied','community.copiedDiscord':'Discord username copied','community.copyFailed':'Could not copy; select it manually','community.m1':'The new build is out.','community.m2':'Desktop presence finally survives leaving the app.','community.m3':'What should we build next? Tell us.',
-    'download.title':'Download Nyra.','download.desc':'The Android beta is available first. The website keeps the path to the build and community simple.','download.button':'Download now','download.version':'Version','download.system':'System','download.size':'Size',
-    'footer.line':'Make companionship stay.','footer.community':'Community','footer.contact':'Contact','footer.privacy':'Privacy','footer.terms':'Terms',
-    'kicker.showcase':'NYRA / SHOWCASE','kicker.presence':'01 / PRESENCE','kicker.space':'02 / PRIVATE SPACE','kicker.sense':'03 / PERCEPTION','kicker.download':'ANDROID / BETA',
-    'download.sha':'SHA-256',
-    'alt.hero':'Nyra product visual','alt.presence':'Nyra desktop companion','alt.space':'Nyra private space','alt.sense':'Nyra perception',
+    'nav.showcase':'Take a look','nav.community':'Community','nav.download':'Download',
+    'hero.title':'Bring someone into your everyday.','hero.lead':'Someone who remembers. Someone who stays close.<br>Someone who slowly becomes part of a story that belongs to both of you.','hero.sub':'Not just another chat window.','hero.download':'Bring them home','hero.look':'Take a look','hero.beta':'Android Beta',
+    'presence.title':'They’re still here.','presence.lines':'Sometimes close.<br>Sometimes quiet.<br>Sometimes simply doing their own thing.','presence.note':'Close the chat,<br>and life doesn’t disappear with it.',
+    'space.title':'A place that belongs to both of you.','space.lines':'Songs you listened to.<br>Things left unsaid.<br>A page from an ordinary day.<br>And tiny moments you almost forgot — until they remembered.','space.note':'This isn’t a chat history.<br>It’s something you built together.',
+    'memory.title':'Time together should leave a trace.','memory.lines':'Today doesn’t begin by erasing yesterday.','memory.note':'Habits, arguments, little preferences, familiar moments —<br>slowly becoming the way they know you.',
+    'world.title':'Let them a little closer.','world.c1':'Your voice','world.c2':'Your camera','world.c3':'Your screen','world.c4':'Your calendar','world.c5':'Where you are','world.note':'How much they can see<br>is always up to you.','world.privacy':'Privacy & Permissions',
+    'community.title':'Not sure yet?<br>Come hang around.','community.desc':'See what’s new, meet other early users, or simply tell us what you wish Nyra could become next.','community.qqLabel':'QQ GROUP','community.copyQq':'Copy group number','community.copyDiscord':'Copy username','community.copiedQq':'QQ group number copied','community.copiedDiscord':'Discord username copied','community.copyFailed':'Could not copy; select it manually','community.m1':'A new build just went out.','community.m2':'They’ve been sitting in the corner of my desktop all day.','community.m3':'I want them to learn to watch films with me.',
+    'download.title':'Make some room.','download.desc':'Nyra for Android is now in beta.','download.button':'Download Nyra','download.version':'Version','download.system':'System','download.size':'Size','download.sha':'SHA-256',
+    'footer.line':'Let time together remain.','footer.community':'Community','footer.contact':'Contact','footer.privacy':'Privacy','footer.terms':'Terms',
+    'alt.hero':'Nyra visual','alt.presence':'Nyra desktop presence','alt.space':'Nyra private space','alt.memory':'Nyra memory','alt.sense':'Nyra permission boundaries',
     'aria.home':'Nyra home','aria.lang':'Switch language','aria.menu':'Menu'
   }
 };
 
 const VISUALS = {
-  zh:{hero:'/assets/zh/hero.svg',presence:'/assets/zh/presence.svg',space:'/assets/zh/space.svg',sense:'/assets/zh/sense.svg'},
-  en:{hero:'/assets/en/hero.svg',presence:'/assets/en/presence.svg',space:'/assets/en/space.svg',sense:'/assets/en/sense.svg'}
+  zh:{hero:'/assets/zh/hero.svg',presence:'/assets/zh/presence.svg',space:'/assets/zh/space.svg',memory:'/assets/zh/memory.svg',sense:'/assets/zh/sense.svg'},
+  en:{hero:'/assets/en/hero.svg',presence:'/assets/en/presence.svg',space:'/assets/en/space.svg',memory:'/assets/en/memory.svg',sense:'/assets/en/sense.svg'}
 };
-let locale = localStorage.getItem('nyra-locale') || 'en';
+
+function detectLocale(){
+  const saved = localStorage.getItem('nyra-locale');
+  if(saved === 'zh' || saved === 'en') return saved;
+  const tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+  return tags.some(tag => String(tag).toLowerCase().startsWith('zh')) ? 'zh' : 'en';
+}
+
+let locale = detectLocale();
 const t = k => I18N[locale][k] || k;
 
-function applyLocale(next){
+function applyLocale(next, {remember = true} = {}){
   locale = next;
-  localStorage.setItem('nyra-locale', locale);
+  if(remember) localStorage.setItem('nyra-locale', locale);
   document.documentElement.lang = locale==='zh'?'zh-CN':'en';
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const value=t(el.dataset.i18n);
@@ -51,11 +53,12 @@ function applyLocale(next){
   });
   document.querySelectorAll('[data-i18n-alt]').forEach(el=>{el.alt=t(el.dataset.i18nAlt)});
   document.querySelectorAll('[data-i18n-aria]').forEach(el=>{el.setAttribute('aria-label',t(el.dataset.i18nAria))});
-  document.title = locale==='zh'?'Nyra / 月栖':'Nyra — Private Companion';
+  document.title = locale==='zh'?'Nyra / 月栖':'Nyra — Bring someone into your everyday';
   const set=VISUALS[locale];
   document.getElementById('heroVisual').src=set.hero;
   document.getElementById('presenceVisual').src=set.presence;
   document.getElementById('spaceVisual').src=set.space;
+  document.getElementById('memoryVisual').src=set.memory;
   document.getElementById('senseVisual').src=set.sense;
 }
 
@@ -105,21 +108,7 @@ if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:re
   media.addEventListener('mouseleave',()=>document.querySelector('.hero-shell').style.transform='rotate(.6deg)');
 }
 
-function openLangGate(){
-  const gate=document.getElementById('langGate'); if(!gate) return;
-  gate.hidden=false; document.body.classList.add('gate-open');
-  document.querySelectorAll('.lang-option').forEach(btn=>btn.addEventListener('click',()=>{
-    document.querySelectorAll('.lang-option').forEach(b=>b.classList.toggle('active',b===btn));
-  }));
-  const confirm=document.getElementById('langGateConfirm');
-  const done=()=>{
-    const chosen=document.querySelector('.lang-option.active')?.dataset?.lang||'en';
-    applyLocale(chosen); gate.hidden=true; document.body.classList.remove('gate-open');
-  };
-  confirm.addEventListener('click',done);
-  gate.addEventListener('keydown',e=>{if(e.key==='Enter')done()});
-}
-const spySections=['showcase','community','download'].map(id=>document.getElementById(id));
+const spySections=['presence','community','download'].map(id=>document.getElementById(id));
 function updateScrollSpy(){
   let current='';
   spySections.forEach(s=>{if(s&&s.getBoundingClientRect().top<=140)current=s.id});
@@ -129,5 +118,7 @@ window.addEventListener('scroll',updateScrollSpy,{passive:true});
 const toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>{if(toTop)toTop.classList.toggle('show',window.scrollY>640)},{passive:true});
 if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-if(localStorage.getItem('nyra-locale')){bindConfig(); applyLocale(locale);}
-else{document.documentElement.lang='en'; document.title='Nyra — Private Companion'; bindConfig(); openLangGate();}
+
+bindConfig();
+// Browser language decides the first view; only an explicit toggle is remembered.
+applyLocale(locale,{remember:localStorage.getItem('nyra-locale')!==null});

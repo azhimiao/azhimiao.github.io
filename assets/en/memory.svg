@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcff"/><stop offset="1" stop-color="#e9f3fa"/></linearGradient>
+    <filter id="s"><feDropShadow dy="16" stdDeviation="20" flood-opacity=".14"/></filter>
+  </defs>
+  <rect width="1400" height="900" rx="52" fill="url(#b)"/>
+  <text x="90" y="112" font-size="27" font-family="Arial,sans-serif" fill="#7e93a1">MEMORY</text>
+
+  <g transform="translate(1215 195)">
+    <circle r="98" fill="#ffffff" stroke="#cfe7f3" stroke-width="3"/>
+    <path d="M-30-38a52 52 0 1 1 43 83 41 41 0 1 0-43-83Z" fill="#0d2d47"/>
+  </g>
+
+  <path d="M120 430 H1330" fill="none" stroke="#b9deef" stroke-width="3" stroke-dasharray="10 14"/>
+  <g fill="#22bce8">
+    <circle cx="230" cy="430" r="10"/><circle cx="560" cy="430" r="10"/><circle cx="890" cy="430" r="10"/><circle cx="1220" cy="430" r="12"/>
+  </g>
+  <g stroke="#9fd3ea" stroke-width="2">
+    <path d="M230 440 V480"/><path d="M560 440 V480"/><path d="M890 440 V480"/><path d="M1220 442 V480"/>
+  </g>
+
+  <g font-family="Arial,sans-serif" filter="url(#s)">
+    <g>
+      <rect x="90" y="480" width="280" height="300" rx="28" fill="#ffffff" stroke="#dceaf2"/>
+      <text x="122" y="542" font-size="19" fill="#8aa4b4">MAR 2</text>
+      <text x="122" y="610" font-size="22" fill="#24485f">You said noise</text>
+      <text x="122" y="646" font-size="22" fill="#24485f">gets to you.</text>
+      <rect x="122" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+    <g>
+      <rect x="420" y="480" width="280" height="300" rx="28" fill="#ffffff" stroke="#dceaf2"/>
+      <text x="452" y="542" font-size="19" fill="#8aa4b4">APR 18</text>
+      <text x="452" y="610" font-size="22" fill="#24485f">We finished that</text>
+      <text x="452" y="646" font-size="22" fill="#24485f">song together.</text>
+      <rect x="452" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+    <g>
+      <rect x="750" y="480" width="280" height="300" rx="28" fill="#ffffff" stroke="#dceaf2"/>
+      <text x="782" y="542" font-size="19" fill="#8aa4b4">MAY 9</text>
+      <text x="782" y="610" font-size="22" fill="#24485f">We argued over</text>
+      <text x="782" y="646" font-size="22" fill="#24485f">something small.</text>
+      <rect x="782" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+    <g>
+      <rect x="1080" y="480" width="280" height="300" rx="28" fill="#0c2740"/>
+      <text x="1112" y="542" font-size="19" fill="#7fa9c2">TODAY</text>
+      <text x="1112" y="610" font-size="22" fill="#eaf7ff">The lights were</text>
+      <text x="1112" y="646" font-size="22" fill="#eaf7ff">already dimmed.</text>
+      <rect x="1112" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+  </g>
+</svg>

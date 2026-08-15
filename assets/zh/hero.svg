@@ -49,9 +49,8 @@
   </g>
 
   <g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#23455e">
-    <text x="130" y="760" font-size="34" font-weight="600">不是一张功能表。</text>
-    <text x="130" y="810" font-size="27">是一个会留在设备里的存在。</text>
+    <text x="130" y="760" font-size="34" font-weight="600">TA 会记得。</text>
+    <text x="130" y="810" font-size="27">也会一直在。</text>
   </g>
   <rect x="130" y="855" width="380" height="2" fill="#43bfe8"/>
-  <text x="130" y="900" font-size="22" font-family="PingFang SC,sans-serif" fill="#778f9f">LOGO · 氛围 · 桌宠动作 · 私人空间</text>
 </svg>

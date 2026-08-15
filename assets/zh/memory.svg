@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcff"/><stop offset="1" stop-color="#e9f3fa"/></linearGradient>
+    <filter id="s"><feDropShadow dy="16" stdDeviation="20" flood-opacity=".14"/></filter>
+  </defs>
+  <rect width="1400" height="900" rx="52" fill="url(#b)"/>
+  <text x="90" y="112" font-size="27" font-family="PingFang SC,sans-serif" fill="#7e93a1">记忆 / MEMORY</text>
+
+  <g transform="translate(1215 195)">
+    <circle r="98" fill="#ffffff" stroke="#cfe7f3" stroke-width="3"/>
+    <path d="M-30-38a52 52 0 1 1 43 83 41 41 0 1 0-43-83Z" fill="#0d2d47"/>
+  </g>
+
+  <path d="M120 430 H1330" fill="none" stroke="#b9deef" stroke-width="3" stroke-dasharray="10 14"/>
+  <g fill="#22bce8">
+    <circle cx="230" cy="430" r="10"/><circle cx="560" cy="430" r="10"/><circle cx="890" cy="430" r="10"/><circle cx="1220" cy="430" r="12"/>
+  </g>
+  <g stroke="#9fd3ea" stroke-width="2">
+    <path d="M230 440 V480"/><path d="M560 440 V480"/><path d="M890 440 V480"/><path d="M1220 442 V480"/>
+  </g>
+
+  <g font-family="PingFang SC,sans-serif" filter="url(#s)">
+    <g>
+      <rect x="90" y="480" width="280" height="300" rx="28" fill="#ffffff" stroke="#dceaf2"/>
+      <text x="122" y="546" font-size="20" fill="#8aa4b4">3 月 2 日</text>
+      <text x="122" y="620" font-size="24" fill="#24485f">你说你怕吵。</text>
+      <rect x="122" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+    <g>
+      <rect x="420" y="480" width="280" height="300" rx="28" fill="#ffffff" stroke="#dceaf2"/>
+      <text x="452" y="546" font-size="20" fill="#8aa4b4">4 月 18 日</text>
+      <text x="452" y="620" font-size="24" fill="#24485f">一起听完那首歌。</text>
+      <rect x="452" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+    <g>
+      <rect x="750" y="480" width="280" height="300" rx="28" fill="#ffffff" stroke="#dceaf2"/>
+      <text x="782" y="546" font-size="20" fill="#8aa4b4">5 月 9 日</text>
+      <text x="782" y="620" font-size="24" fill="#24485f">为小事吵了一架。</text>
+      <rect x="782" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+    <g>
+      <rect x="1080" y="480" width="280" height="300" rx="28" fill="#0c2740"/>
+      <text x="1112" y="546" font-size="20" fill="#7fa9c2">今天</text>
+      <text x="1112" y="620" font-size="24" fill="#eaf7ff">灯已经调暗了。</text>
+      <rect x="1112" y="695" width="72" height="4" rx="2" fill="#49bce6"/>
+    </g>
+  </g>
+</svg>
