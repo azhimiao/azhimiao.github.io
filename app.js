@@ -1,128 +1,438 @@
-const CONFIG = window.NYRA_CONFIG || {};
-const I18N = {
-  zh:{
-    'nav.showcase':'看看 TA','nav.community':'群聊','nav.download':'下载',
-    'hero.title':'把 TA 带进你的日常。','hero.lead':'TA 会记得，会靠近，<br>也会慢慢拥有只属于你们的故事。','hero.sub':'不只在聊天框里。','hero.download':'下载','hero.look':'先去看看','hero.beta':'Android Beta',
-    'presence.title':'TA 就在这里。','presence.lines':'有时候靠近。<br>有时候发呆。<br>有时候什么也不说。','presence.note':'关掉聊天窗口，<br>生活也没有因此暂停。',
-    'space.title':'留一个只属于你们的地方。','space.lines':'听过的歌。<br>没有说完的话。<br>某一天留下的日记。<br>还有那些后来才发现，TA 居然一直记得的小事。','space.note':'这里不是聊天记录。<br>是你们一起留下来的东西。',
-    'memory.title':'相处过，就应该留下痕迹。','memory.lines':'今天不会从昨天重新开始。','memory.note':'熟悉、习惯、争执、偏爱，<br>都会一点一点变成 TA 认识你的方式。',
-    'world.title':'TA 也可以离你更近一点。','world.c1':'声音','world.c2':'画面','world.c3':'屏幕','world.c4':'日历','world.c5':'你所在的地方','world.note':'想让 TA 知道多少，<br>由你决定。','world.privacy':'查看隐私与权限',
-    'community.title':'还不确定？<br>先来坐一会儿。','community.desc':'看看新的版本，看看其他人把月栖变成了什么样子，也可以直接告诉我们——你希望 TA 下一次学会什么。','community.qqLabel':'QQ 群','community.copyQq':'复制群号','community.copyDiscord':'复制用户名','community.copiedQq':'QQ 群号已复制','community.copiedDiscord':'Discord 用户名已复制','community.copyFailed':'复制失败，请手动选择','community.m1':'新版本刚发出去。','community.m2':'我把 TA 放在桌面角落，一整天都在。','community.m3':'我想让 TA 学会一起看电影。',
-    'download.title':'给 TA 留个位置。','download.desc':'Android 测试版已经开放。两个下载通道任选其一。','download.button':'下载 APK','download.webLabel':'网页直链 · download.memprism.com','download.githubLabel':'GitHub Pages 镜像','download.githubButton':'从 GitHub 下载','download.version':'版本','download.system':'系统','download.size':'大小','download.sha':'SHA-256',
-    'footer.line':'让相处留下来。','footer.community':'群聊','footer.contact':'联系','footer.privacy':'隐私','footer.terms':'条款','footer.legal':'法律中心',
-    'alt.hero':'月栖视觉','alt.presence':'月栖桌面陪伴','alt.space':'月栖私人空间','alt.memory':'月栖记忆','alt.sense':'月栖感知边界',
-    'aria.home':'Nyra 首页','aria.lang':'切换语言','aria.menu':'菜单'
-  },
-  en:{
-    'nav.showcase':'Take a look','nav.community':'Community','nav.download':'Download',
-    'hero.title':'Bring someone into your everyday.','hero.lead':'Someone who remembers. Someone who stays close.<br>Someone who slowly becomes part of a story that belongs to both of you.','hero.sub':'Not just another chat window.','hero.download':'Download','hero.look':'Take a look','hero.beta':'Android Beta',
-    'presence.title':'They’re still here.','presence.lines':'Sometimes close.<br>Sometimes quiet.<br>Sometimes simply doing their own thing.','presence.note':'Close the chat,<br>and life doesn’t disappear with it.',
-    'space.title':'A place that belongs to both of you.','space.lines':'Songs you listened to.<br>Things left unsaid.<br>A page from an ordinary day.<br>And tiny moments you almost forgot — until they remembered.','space.note':'This isn’t a chat history.<br>It’s something you built together.',
-    'memory.title':'Time together should leave a trace.','memory.lines':'Today doesn’t begin by erasing yesterday.','memory.note':'Habits, arguments, little preferences, familiar moments —<br>slowly becoming the way they know you.',
-    'world.title':'Let them a little closer.','world.c1':'Your voice','world.c2':'Your camera','world.c3':'Your screen','world.c4':'Your calendar','world.c5':'Where you are','world.note':'How much they can see<br>is always up to you.','world.privacy':'Privacy & Permissions',
-    'community.title':'Not sure yet?<br>Come hang around.','community.desc':'See what’s new, meet other early users, or simply tell us what you wish Nyra could become next.','community.qqLabel':'QQ GROUP','community.copyQq':'Copy group number','community.copyDiscord':'Copy username','community.copiedQq':'QQ group number copied','community.copiedDiscord':'Discord username copied','community.copyFailed':'Could not copy; select it manually','community.m1':'A new build just went out.','community.m2':'They’ve been sitting in the corner of my desktop all day.','community.m3':'I want them to learn to watch films with me.',
-    'download.title':'Make some room.','download.desc':'Nyra for Android is now in beta. Choose either download channel.','download.button':'Download APK','download.webLabel':'Direct · download.memprism.com','download.githubLabel':'GitHub Pages mirror','download.githubButton':'Download from GitHub','download.version':'Version','download.system':'System','download.size':'Size','download.sha':'SHA-256',
-    'footer.line':'Let time together remain.','footer.community':'Community','footer.contact':'Contact','footer.privacy':'Privacy','footer.terms':'Terms','footer.legal':'Legal',
-    'alt.hero':'Nyra visual','alt.presence':'Nyra desktop presence','alt.space':'Nyra private space','alt.memory':'Nyra memory','alt.sense':'Nyra permission boundaries',
-    'aria.home':'Nyra home','aria.lang':'Switch language','aria.menu':'Menu'
+(() => {
+  'use strict';
+
+  const CONFIG = window.NYRA_CONFIG || {};
+  const byId = id => document.getElementById(id);
+  const all = selector => Array.from(document.querySelectorAll(selector));
+  const EN = {
+    'aria.skip': 'Skip to main content',
+    'aria.home': 'Nyra home',
+    'aria.nav': 'Main navigation',
+    'aria.menu': 'Open menu',
+    'aria.mobileNav': 'Mobile navigation',
+    'aria.scenes': 'Life with Nyra',
+    'aria.top': 'Back to top',
+    'nav.showcase': 'Meet Nyra',
+    'nav.space': 'Life together',
+    'nav.community': 'Come say hello',
+    'nav.download': 'Meet your companion',
+    'hero.beta': 'Android Beta · Your story starts here',
+    'hero.line1': 'A world out there.',
+    'hero.line2': 'Someone ',
+    'hero.accent': 'right here.',
+    'hero.lead': 'An AI companion with a personality and memories.\nFrom a simple goodnight to a life shared in little moments.',
+    'hero.download': 'Make room for Nyra',
+    'hero.look': 'Get to know Nyra',
+    'hero.note': 'Local first · Yours to shape · At your pace',
+    'hero.message': 'Take your time. I’m here.',
+    'hero.caption': 'A little light for the everyday.',
+    'hero.scroll': 'Discover what life together could be',
+    'alt.moon': 'A warm crescent moon holding a little home with its lights on',
+    'intro.eyebrow': 'Familiarity grows into companionship',
+    'intro.line1': 'Every hello',
+    'intro.line2': 'can pick up where you left off.',
+    'intro.desc': 'A favorite nickname. A thought left unfinished. Time spent together.\nLittle things that make your next conversation feel familiar.',
+    'memory.title': 'The little things, remembered',
+    'memory.desc': 'Keep what matters, and let familiarity grow.',
+    'diary.title': 'An ordinary day, worth keeping',
+    'diary.desc': 'Conversations, feelings, and shared moments become pages in your diary.',
+    'presence.title': 'Company beyond the chat',
+    'presence.desc': 'Listen together, or simply share a quiet corner of your desktop.',
+    'demo.space': 'our space',
+    'demo.here': 'Right here',
+    'demo.today': 'Today · 21:36',
+    'demo.user': 'I’m tired today. Don’t really feel like talking.',
+    'demo.reply': 'Then we don’t have to.\nPut on a song you like. I’ll stay a while.',
+    'demo.memoryLabel': 'A little thing to remember',
+    'demo.memory': '“When I’m tired, quiet company means more than advice.”',
+    'demo.input': 'Say something, or simply stay…',
+    'demo.diaryTag': 'A page of us',
+    'demo.diaryTitle': 'Nothing much happened.\nBut you were here.',
+    'demo.diaryText': 'We didn’t say much tonight. The music was soft, and time seemed to slow down.\n\nSome days don’t need a big story. Being here together is enough to remember.',
+    'demo.presence': 'Doing our own thing.\nKnowing we’re not alone.',
+    'demo.song': 'A moment to slow down',
+    'demo.listening': 'Listening with Nyra',
+    'demo.caption': 'Illustrative companion scenes · Sample conversations and content',
+    'space.eyebrow': 'Make it feel like you',
+    'space.line1': 'One companion.',
+    'space.line2': 'So many ways to be together.',
+    'space.desc': 'Life doesn’t have to be extraordinary to be worth sharing.\nThere’s room here for the little things.',
+    'space.identityTitle': 'A personality you can shape.',
+    'space.identityDesc': 'A name, a personality, a voice, a world. Create or import a character who brings their own personality to every conversation.',
+    'space.momentNote': 'This song made me think of you.',
+    'space.momentsTitle': 'More than pressing send.',
+    'space.momentsDesc': 'A song, a photo, a diary entry. Build a collection of shared moments that reaches beyond the chat.',
+    'space.shellTitle': 'A different view. The same bond.',
+    'space.shellDesc': 'A simple app or a little virtual phone filled with your everyday life. Two interfaces, one character, and the same shared memories.',
+    'privacy.eyebrow': 'Closeness, with room to breathe',
+    'privacy.line1': 'Let them closer.',
+    'privacy.line2': 'On your terms.',
+    'privacy.desc': 'Memories and everyday moments stay on your device first. Microphone, camera, and location access are requested when needed. Online models receive the content needed for the services you choose.',
+    'privacy.local': 'Local first',
+    'privacy.permission': 'Permissions you control',
+    'privacy.model': 'Choose your model',
+    'privacy.link': 'Privacy and permissions',
+    'community.eyebrow': 'Still growing. Better with you.',
+    'community.title': 'Come in. Stay a while.',
+    'community.desc': 'Nyra is still in beta. Share your days, your ideas,\nor what you’d love to find here next.',
+    'community.github': 'Follow our progress on GitHub',
+    'community.qqLabel': 'QQ COMMUNITY',
+    'community.copyQq': 'Copy group number',
+    'community.copyDiscord': 'Copy username',
+    'community.copiedQq': 'QQ group number copied',
+    'community.copiedDiscord': 'Discord username copied',
+    'community.copyFailed': 'Copy is unavailable. Select the contact below to copy it manually.',
+    'community.contactValue': 'Contact to copy',
+    'download.eyebrow': 'Your story starts with hello',
+    'download.line1': 'A little moonlight.',
+    'download.line2': 'Every day.',
+    'download.desc': 'Nyra for Android is now in beta.',
+    'download.button': 'Download for Android',
+    'download.mirror': 'GitHub mirror',
+    'download.version': 'Version',
+    'download.details': 'Installation and file verification',
+    'download.instructions': 'Open the downloaded APK on your Android device and follow the system instructions to allow this installation. Beta features are still being refined. AI features require a configured model or a hosted service.',
+    'download.source': 'Direct download: download.memprism.com · Mirror: GitHub Pages',
+    'download.checksumUnavailable': 'Checksum not provided',
+    'footer.line': 'Let time together remain.',
+    'footer.contact': 'Contact',
+    'footer.privacy': 'Privacy',
+    'footer.terms': 'Terms',
+    'footer.legal': 'Legal',
+    'footer.rights': 'All rights reserved.'
+  };
+  const ZH = {
+    'community.copiedQq': 'QQ 群号已复制',
+    'community.copiedDiscord': 'Discord 用户名已复制',
+    'community.copyFailed': '暂时无法自动复制，可选择下方联系方式手动复制。',
+    'community.contactValue': '待复制的联系方式',
+    'download.checksumUnavailable': '暂未提供校验值'
+  };
+
+  // Chinese copy comes from the authored page. Only text and line breaks are
+  // translated; translated strings never become executable HTML.
+  function readText(node) {
+    return Array.from(node.childNodes).map(child => child.nodeName === 'BR'
+      ? '\n' : child.nodeType === 3 ? child.textContent : readText(child)).join('');
   }
-};
-
-const VISUALS = {
-  zh:{hero:'/assets/zh/hero.svg',presence:'/assets/zh/presence.svg',space:'/assets/zh/space.svg',memory:'/assets/zh/memory.svg',sense:'/assets/zh/sense.svg'},
-  en:{hero:'/assets/en/hero.svg',presence:'/assets/en/presence.svg',space:'/assets/en/space.svg',memory:'/assets/en/memory.svg',sense:'/assets/en/sense.svg'}
-};
-
-function detectLocale(){
-  const saved = localStorage.getItem('nyra-locale');
-  if(saved === 'zh' || saved === 'en') return saved;
-  const tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
-  return tags.some(tag => String(tag).toLowerCase().startsWith('zh')) ? 'zh' : 'en';
-}
-
-let locale = detectLocale();
-const t = k => I18N[locale][k] || k;
-
-function applyLocale(next, {remember = true} = {}){
-  locale = next;
-  if(remember) localStorage.setItem('nyra-locale', locale);
-  document.documentElement.lang = locale==='zh'?'zh-CN':'en';
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const value=t(el.dataset.i18n);
-    if(value.includes('<br>')) el.innerHTML=value; else el.textContent=value;
+  const textNodes = all('[data-i18n]').map(element => {
+    const key = element.dataset.i18n;
+    const original = readText(element);
+    if (!(key in ZH)) ZH[key] = original;
+    return { element, key, original };
   });
-  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{el.alt=t(el.dataset.i18nAlt)});
-  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{el.setAttribute('aria-label',t(el.dataset.i18nAria))});
-  document.title = locale==='zh'?'Nyra / 月栖':'Nyra — Bring someone into your everyday';
-  const set=VISUALS[locale];
-  document.getElementById('heroVisual').src=set.hero;
-  document.getElementById('presenceVisual').src=set.presence;
-  document.getElementById('spaceVisual').src=set.space;
-  document.getElementById('memoryVisual').src=set.memory;
-  document.getElementById('senseVisual').src=set.sense;
-}
-
-document.getElementById('localeToggle').addEventListener('click',()=>applyLocale(locale==='zh'?'en':'zh'));
-const menu=document.getElementById('mobileMenu');
-document.getElementById('menuBtn').addEventListener('click',()=>menu.classList.toggle('open'));
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
-
-const toast=document.getElementById('toast'); let toastTimer;
-function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2200)}
-
-function bindConfig(){
-  const webUrl=CONFIG.downloadUrl||'https://download.memprism.com/nyra-latest.apk';
-  const githubUrl=CONFIG.githubDownloadUrl||'https://azhimiao.github.io/downloads/nyra-latest.apk';
-  document.getElementById('apkDownload').href=webUrl;
-  const gh=document.getElementById('githubDownload');
-  if(gh) gh.href=githubUrl;
-  document.getElementById('releaseVersion').textContent=CONFIG.version||'Beta';
-  document.getElementById('releaseSystem').textContent=CONFIG.minAndroid||'Android 10+';
-  document.getElementById('releaseSize').textContent=CONFIG.fileSize||'—';
-  const shaEl=document.getElementById('releaseSha'); if(shaEl) shaEl.textContent=CONFIG.sha256?CONFIG.sha256.slice(0,16)+'…':'';
-  document.getElementById('copyrightOwner').textContent=CONFIG.copyrightOwner||'MemPrism';
-  const qq=String(CONFIG.qqGroup||'').trim();
-  const discord=String(CONFIG.discordHandle||'').trim();
-  document.getElementById('qqGroup').textContent=qq||'—';
-  document.getElementById('discordHandle').textContent=discord||'—';
-  document.getElementById('qqContact').disabled=!qq;
-  document.getElementById('discordContact').disabled=!discord;
-  if(CONFIG.githubUrl){const g=document.getElementById('githubLink');g.href=CONFIG.githubUrl;g.classList.remove('hidden')}
-  if(CONFIG.contactEmail){const c=document.getElementById('contactLink');c.href=`mailto:${CONFIG.contactEmail}`;c.classList.remove('hidden')}
-}
-
-async function copyContact(value, successKey){
-  try{
-    await navigator.clipboard.writeText(value);
-    showToast(t(successKey));
-  }catch{
-    showToast(t('community.copyFailed'));
+  const attributeNodes = [
+    ...all('[data-i18n-alt]').map(element => ({ element, key: element.dataset.i18nAlt, attr: 'alt' })),
+    ...all('[data-i18n-aria]').map(element => ({ element, key: element.dataset.i18nAria, attr: 'aria-label' }))
+  ].map(item => {
+    item.original = item.element.getAttribute(item.attr) || '';
+    if (!(item.key in ZH)) ZH[item.key] = item.original;
+    return item;
+  });
+  function savedLocale() {
+    try { return localStorage.getItem('nyra-locale'); } catch { return null; }
   }
-}
+  function detectLocale() {
+    const saved = savedLocale();
+    if (saved === 'zh' || saved === 'en') return saved;
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language || 'zh'];
+    return languages.some(language => String(language).toLowerCase().startsWith('zh')) ? 'zh' : 'en';
+  }
+  let locale = detectLocale();
+  const t = (key, fallback = '') => (locale === 'zh' ? ZH[key] : EN[key]) ?? fallback;
+  const localeToggle = byId('localeToggle');
+  const menu = byId('mobileMenu');
+  const menuButton = byId('menuBtn');
+  const toast = byId('toast');
+  let toastTimer;
 
-document.getElementById('qqContact').addEventListener('click',()=>copyContact(String(CONFIG.qqGroup||''),'community.copiedQq'));
-document.getElementById('discordContact').addEventListener('click',()=>copyContact(String(CONFIG.discordHandle||''),'community.copiedDiscord'));
+  function setText(element, value) {
+    const fragment = document.createDocumentFragment();
+    String(value).split('\n').forEach((piece, index) => {
+      if (index) fragment.append(document.createTextNode(' '), document.createElement('br'));
+      fragment.append(document.createTextNode(piece));
+    });
+    element.replaceChildren(fragment);
+  }
+  function updateMenuLabel() {
+    if (menuButton) menuButton.setAttribute('aria-label', locale === 'zh'
+      ? (menu && !menu.hidden ? '关闭菜单' : '打开菜单')
+      : (menu && !menu.hidden ? 'Close menu' : 'Open menu'));
+  }
+  function applyLocale(next, remember = false) {
+    locale = next === 'en' ? 'en' : 'zh';
+    if (remember) {
+      try { localStorage.setItem('nyra-locale', locale); } catch { /* Language still works for this visit. */ }
+    }
+    document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en';
+    textNodes.forEach(({ element, key, original }) => setText(element, t(key, original)));
+    attributeNodes.forEach(({ element, key, attr, original }) => element.setAttribute(attr, t(key, original)));
+    if (localeToggle) {
+      localeToggle.textContent = locale === 'zh' ? 'EN ↗' : '中文 ↗';
+      localeToggle.setAttribute('aria-label', locale === 'zh' ? 'Switch to English' : '切换为中文');
+      localeToggle.setAttribute('lang', locale === 'zh' ? 'en' : 'zh-CN');
+    }
+    if (byId('heroTitle')) {
+      const title = locale === 'zh' ? '月栖 Nyra — 世界很大。这里，有 TA。' : 'Nyra — A world out there. Someone right here.';
+      const description = locale === 'zh'
+        ? '月栖 Nyra，一个有记忆、有个性的 AI 伙伴。从一句晚安，到只属于你们的日常。Android 测试版现已开放。'
+        : 'An AI companion with a personality and memories. From a simple goodnight to a life shared in little moments. Android beta now available.';
+      document.title = title;
+      all('meta[property="og:title"], meta[name="twitter:title"]').forEach(meta => { meta.content = title; });
+      all('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach(meta => { meta.content = description; });
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      const alternateLocale = document.querySelector('meta[property="og:locale:alternate"]');
+      if (ogLocale) ogLocale.content = locale === 'zh' ? 'zh_CN' : 'en_US';
+      if (alternateLocale) alternateLocale.content = locale === 'zh' ? 'en_US' : 'zh_CN';
+    }
+    const sha = byId('releaseSha');
+    if (sha && !validChecksum) sha.textContent = t('download.checksumUnavailable');
+    updateMenuLabel();
+    if (toast) {
+      clearTimeout(toastTimer);
+      toast.classList.remove('show');
+      toast.replaceChildren();
+    }
+  }
+  localeToggle?.addEventListener('click', () => applyLocale(locale === 'zh' ? 'en' : 'zh', true));
 
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  function setMenu(open, returnFocus = false) {
+    if (!menu || !menuButton) return;
+    menu.hidden = !open;
+    menu.classList.toggle('open', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    updateMenuLabel();
+    if (returnFocus) menuButton.focus({ preventScroll: true });
+  }
+  menuButton?.addEventListener('click', () => setMenu(menu?.hidden !== false));
+  menu?.addEventListener('click', event => {
+    if (event.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu && !menu.hidden) {
+      setMenu(false, true);
+      event.preventDefault();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (menu && !menu.hidden && !menu.contains(event.target) && !menuButton?.contains(event.target)) setMenu(false);
+  });
 
-if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  const media=document.getElementById('heroMedia');
-  media.addEventListener('mousemove',e=>{const r=media.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;document.querySelector('.hero-shell').style.transform=`rotate(${x*.8}deg) translate(${x*4}px,${y*4}px)`});
-  media.addEventListener('mouseleave',()=>document.querySelector('.hero-shell').style.transform='rotate(.6deg)');
-}
+  const tabs = all('[role="tab"][data-scene]').filter(tab => byId(tab.getAttribute('aria-controls')));
+  function selectScene(selected, focus = false) {
+    tabs.forEach(tab => {
+      const active = tab === selected;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      byId(tab.getAttribute('aria-controls')).hidden = !active;
+    });
+    if (focus) selected.focus({ preventScroll: true });
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectScene(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      if (next !== undefined) {
+        event.preventDefault();
+        selectScene(tabs[next], true);
+      }
+    });
+  });
+  if (tabs.length) selectScene(tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0]);
 
-const spySections=['presence','community','download'].map(id=>document.getElementById(id));
-function updateScrollSpy(){
-  let current='';
-  spySections.forEach(s=>{if(s&&s.getBoundingClientRect().top<=140)current=s.id});
-  document.querySelectorAll('.desktop-nav a,.mobile-menu a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
-}
-window.addEventListener('scroll',updateScrollSpy,{passive:true});
-const toTop=document.getElementById('toTop');
-window.addEventListener('scroll',()=>{if(toTop)toTop.classList.toggle('show',window.scrollY>640)},{passive:true});
-if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  function safeWebUrl(value, fallback = '') {
+    try {
+      const url = new URL(String(value));
+      if ((url.protocol === 'https:' || url.protocol === 'http:') && !url.username && !url.password) return url.href;
+    } catch { /* Invalid configuration uses the established download destination. */ }
+    return fallback;
+  }
+  function setContent(id, value) {
+    const element = byId(id);
+    if (element) element.textContent = String(value);
+  }
+  const checksum = String(CONFIG.sha256 || '').trim();
+  const validChecksum = /^[a-f0-9]{64}$/i.test(checksum);
+  function bindConfig() {
+    const apk = byId('apkDownload');
+    const mirror = byId('githubDownload');
+    if (apk) apk.href = safeWebUrl(CONFIG.downloadUrl, 'https://download.memprism.com/nyra-latest.apk');
+    if (mirror) mirror.href = safeWebUrl(CONFIG.githubDownloadUrl, 'https://azhimiao.github.io/downloads/nyra-latest.apk');
+    setContent('releaseVersion', CONFIG.version || 'Beta');
+    setContent('releaseSystem', CONFIG.minAndroid || 'Android 10+');
+    setContent('releaseSize', CONFIG.fileSize || '—');
+    setContent('releaseSha', validChecksum ? checksum : t('download.checksumUnavailable'));
+    setContent('copyrightOwner', CONFIG.copyrightOwner || 'MemPrism');
+    setContent('qqGroup', String(CONFIG.qqGroup || '').trim() || '—');
+    setContent('discordHandle', String(CONFIG.discordHandle || '').trim() || '—');
+    const qq = byId('qqContact');
+    const discord = byId('discordContact');
+    if (qq) qq.disabled = !String(CONFIG.qqGroup || '').trim();
+    if (discord) discord.disabled = !String(CONFIG.discordHandle || '').trim();
+    const github = byId('githubLink');
+    const githubUrl = safeWebUrl(CONFIG.githubUrl);
+    if (github) {
+      github.hidden = !githubUrl;
+      github.classList.toggle('hidden', !githubUrl);
+      if (githubUrl) github.href = githubUrl;
+    }
+    const contact = byId('contactLink');
+    const email = String(CONFIG.contactEmail || '').trim();
+    const validEmail = /^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(email);
+    if (contact) {
+      contact.hidden = !validEmail;
+      contact.classList.toggle('hidden', !validEmail);
+      if (validEmail) contact.href = `mailto:${email}`;
+    }
+  }
 
-bindConfig();
-// Browser language decides the first view; only an explicit toggle is remembered.
-applyLocale(locale,{remember:localStorage.getItem('nyra-locale')!==null});
+  function showToast(message, selectableValue = '') {
+    if (!toast) return;
+    clearTimeout(toastTimer);
+    toast.replaceChildren(document.createTextNode(message));
+    toast.classList.add('show');
+    if (selectableValue) {
+      const field = document.createElement('input');
+      field.className = 'toast-copy-value';
+      field.type = 'text';
+      field.readOnly = true;
+      field.value = selectableValue;
+      field.setAttribute('aria-label', t('community.contactValue'));
+      field.addEventListener('focus', () => field.select());
+      field.addEventListener('click', () => field.select());
+      toast.append(field);
+      field.focus({ preventScroll: true });
+      field.select();
+    }
+    const dismiss = () => {
+      if (toast.contains(document.activeElement)) {
+        toastTimer = setTimeout(dismiss, 4000);
+      } else {
+        toast.classList.remove('show');
+        toast.replaceChildren();
+      }
+    };
+    toastTimer = setTimeout(dismiss, selectableValue ? 12000 : 2600);
+  }
+  async function copyContact(value, successKey) {
+    const text = String(value || '').trim();
+    if (!text) return;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('clipboard_unavailable');
+      await navigator.clipboard.writeText(text);
+      showToast(t(successKey));
+    } catch {
+      showToast(t('community.copyFailed'), text);
+    }
+  }
+  byId('qqContact')?.addEventListener('click', () => copyContact(CONFIG.qqGroup, 'community.copiedQq'));
+  byId('discordContact')?.addEventListener('click', () => copyContact(CONFIG.discordHandle, 'community.copiedDiscord'));
+
+  const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : null;
+  const heroMedia = byId('heroMedia');
+  const finePointer = typeof matchMedia === 'function' ? matchMedia('(pointer: fine)') : null;
+  heroMedia?.addEventListener('pointermove', event => {
+    if (!finePointer?.matches || reducedMotion?.matches || event.pointerType === 'touch') return;
+    const rect = heroMedia.getBoundingClientRect();
+    heroMedia.style.setProperty('--moon-x', `${((event.clientX - rect.left) / rect.width - .5) * 9}px`);
+    heroMedia.style.setProperty('--moon-y', `${((event.clientY - rect.top) / rect.height - .5) * 9}px`);
+  }, { passive: true });
+  heroMedia?.addEventListener('pointerleave', () => {
+    heroMedia.style.removeProperty('--moon-x');
+    heroMedia.style.removeProperty('--moon-y');
+  });
+  let revealObserver;
+  function revealAll() {
+    revealObserver?.disconnect();
+    all('.reveal').forEach(element => {
+      element.classList.remove('is-pending');
+      element.classList.add('visible');
+    });
+  }
+  function setupReveals() {
+    if (reducedMotion?.matches || typeof IntersectionObserver !== 'function') return revealAll();
+    try {
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px 40px 0px', threshold: 0.01 });
+      all('.reveal').forEach(element => {
+        if (element.getBoundingClientRect().top > window.innerHeight + 40) {
+          revealObserver.observe(element);
+          element.classList.add('is-pending');
+        } else element.classList.add('visible');
+      });
+    } catch { revealAll(); }
+  }
+  if (reducedMotion?.addEventListener) reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) revealAll();
+  });
+
+  const navLinks = all('.desktop-nav a[href^="#"], .mobile-menu a[href^="#"]');
+  const sections = Array.from(new Set(navLinks.map(link => byId(link.hash.slice(1))).filter(Boolean)));
+  const toTop = byId('toTop');
+  let scrollQueued = false;
+  function updateScrollState() {
+    scrollQueued = false;
+    let current = '';
+    const offset = (byId('top')?.getBoundingClientRect().height || 80) + 70;
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top <= offset) current = section.id;
+    });
+    navLinks.forEach(link => {
+      const active = Boolean(current) && link.hash === `#${current}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    if (toTop) {
+      const shown = window.scrollY > 640;
+      toTop.hidden = !shown;
+      toTop.classList.toggle('show', shown);
+    }
+  }
+  function queueScrollState() {
+    if (scrollQueued) return;
+    scrollQueued = true;
+    requestAnimationFrame(updateScrollState);
+  }
+  function syncResponsiveControls() {
+    // Read the actual layout so navigation stays in sync with CSS breakpoints.
+    if (menuButton && getComputedStyle(menuButton).display === 'none') setMenu(false);
+    const tablist = tabs[0]?.closest('[role="tablist"]');
+    if (tablist) tablist.setAttribute('aria-orientation',
+      getComputedStyle(tablist).flexDirection.startsWith('row') ? 'horizontal' : 'vertical');
+  }
+  window.addEventListener('scroll', queueScrollState, { passive: true });
+  window.addEventListener('resize', () => {
+    syncResponsiveControls();
+    queueScrollState();
+  }, { passive: true });
+  document.addEventListener('focusin', event => {
+    const pending = event.target.closest?.('.reveal.is-pending');
+    if (pending) {
+      pending.classList.remove('is-pending');
+      pending.classList.add('visible');
+      revealObserver?.unobserve(pending);
+    }
+  });
+  toTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reducedMotion?.matches ? 'instant' : 'smooth' });
+    document.querySelector('.topbar .brand')?.focus({ preventScroll: true });
+  });
+  bindConfig();
+  applyLocale(locale);
+  setMenu(false);
+  syncResponsiveControls();
+  setupReveals();
+  updateScrollState();
+})();

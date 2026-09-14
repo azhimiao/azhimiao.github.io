@@ -33,7 +33,7 @@ General discussion is allowed, but Nyra is not a licensed professional and shoul
 
 ## CONTENT-6 Enforcement
 
-Violations can result in content refusal, feature restriction, warning, account suspension or termination, with appeal rights described in the Complaints & Appeals Policy.
+Violations can result in content refusal, feature restriction, warning, account suspension or termination.
 
 
 ---
