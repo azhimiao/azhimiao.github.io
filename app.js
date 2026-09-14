@@ -334,6 +334,13 @@
   byId('discordContact')?.addEventListener('click', () => copyContact(CONFIG.discordHandle, 'community.copiedDiscord'));
 
   const reducedMotion = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : null;
+  const syncPageHeight = () => {
+    const height = Math.round(window.visualViewport?.height || window.innerHeight);
+    if (height) document.documentElement.style.setProperty('--page', `${height}px`);
+  };
+  syncPageHeight();
+  window.visualViewport?.addEventListener('resize', syncPageHeight);
+  window.addEventListener('orientationchange', () => setTimeout(syncPageHeight, 80));
   const heroMedia = byId('heroMedia');
   const finePointer = typeof matchMedia === 'function' ? matchMedia('(pointer: fine)') : null;
   heroMedia?.addEventListener('pointermove', event => {

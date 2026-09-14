@@ -47,3 +47,54 @@ html[lang=en] .hero h1{font-size:70px;letter-spacing:-3px;line-height:1.16;white
 @media(max-width:700px){.hello-note{width:210px}.hello-note>div{min-width:0}html[lang=en] .hero h1{font-size:52px}html[lang=en] .hero h1>span:first-child{font-size:37px;letter-spacing:-1.5px}html[lang=en] .hello-note p{font-size:14px;line-height:1.35}html[lang=en] .hero-actions{gap:16px}html[lang=en] .hero-actions .btn{gap:13px}}
 @media(max-width:374px){html[lang=en] .hero h1>span:first-child{font-size:34px}html[lang=en] .hero h1{font-size:49px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal.is-pending{opacity:1;transform:none}.moon-art{transform:none}}
+
+/* One viewport per page: large and small screens must not peek the next page. */
+:root{--page:100vh}
+@supports (height:100dvh){:root{--page:100dvh}}
+html,body{overflow-x:clip}
+.hero{
+  height:var(--page);
+  min-height:var(--page);
+  max-height:var(--page);
+  display:flex;
+  flex-direction:column;
+}
+.hero-grid{
+  flex:1 1 auto;
+  min-height:0!important;
+}
+.hero-media{min-height:0}
+.introduction,.everyday,.boundaries,.community,.download{min-height:var(--page);box-sizing:border-box}
+.introduction,.everyday,.community,.download{display:flex;flex-direction:column;justify-content:center}
+@media(max-width:700px){
+  .hero-grid{
+    display:flex!important;
+    flex-direction:column;
+    align-items:stretch!important;
+    padding-bottom:8px;
+  }
+  .hero-copy{flex:0 0 auto}
+  .hero-media{
+    aspect-ratio:auto!important;
+    flex:1 1 auto;
+    width:100%;
+    max-width:none;
+    min-height:160px;
+    margin-top:4px;
+    align-self:stretch;
+  }
+  .moon-art{
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+  }
+}
+@media(max-height:540px) and (orientation:landscape){
+  .hero{height:auto;max-height:none;overflow:visible}
+}
+@media(min-height:640px){
+  html{scroll-snap-type:y proximity}
+  .hero,.introduction,.everyday,.boundaries,.community,.download{scroll-snap-align:start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
